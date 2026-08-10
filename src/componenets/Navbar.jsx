@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import { Send } from "lucide-react";
 import { useLayoutEffect, useRef, useState } from "react";
 
 const Navbar = () => {
@@ -15,7 +16,7 @@ const Navbar = () => {
                 ease: "back.out",
             }).from("#logo", {
                 xPercent: -100,
-                duration: 0.8,
+                duration: 0.5,
                 opacity: 0,
                 ease: "back.out"
             }, "-=0.5").from(".navLink", {
@@ -33,7 +34,7 @@ const Navbar = () => {
             }, {
                 scale: 1,
                 opacity: 1,
-                duration: 0.5,
+                duration: 0.3,
                 ease: "linear"
             }, "-=0.7")
         })
@@ -93,7 +94,7 @@ const Navbar = () => {
                     id="cta"
                 >
                     Let's Talk
-                    <span className="text-base">↗</span>
+                    <span className="text-base"><Send size={20} /></span>
                 </a>
             </nav>
         </>

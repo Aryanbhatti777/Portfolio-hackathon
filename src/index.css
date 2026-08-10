@@ -14,7 +14,7 @@
 }
 
 #cta:hover{
-    box-shadow: 0 0 10px rgb(241, 234, 234);
+    box-shadow: 0 0 5px rgb(241, 234, 234);
     animation-name: wibble;
     animation-duration: 0.4s;
     background-color: #6615D4;
@@ -23,12 +23,16 @@
 
 @keyframes wibble {
     30%{
-        transform: rotate(10deg)
+        transform: rotate(5deg)
     }
     60%{
-        transform: rotate(-20deg)
+        transform: rotate(-10deg)
     }
     100%{
-        transform: rotate(10deg)
+        transform: rotate(5deg)
     }
+}
+
+#heroTitle span{
+    display: inline-block
 }
