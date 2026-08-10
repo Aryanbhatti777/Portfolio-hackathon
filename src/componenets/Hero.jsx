@@ -6,7 +6,7 @@ const Hero = () => {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            const tl = gsap.timeline({delay: 0.8})
+            const tl = gsap.timeline({ delay: 0.8 })
 
             tl.from("#availability", {
                 opacity: 0,
@@ -23,20 +23,32 @@ const Hero = () => {
                 opacity: 0,
                 ease: "back.out",
                 duration: 0.8,
-                stagger: { 
+                stagger: {
                     each: 0.2,
-                    from: "start",   
+                    from: "start",
                 }
             }).from("#heroDescription", {
                 y: 30,
                 opacity: 0,
-                duration: 0.5,
-                ease: "power3.out",                
-            },"-=0.5")
+                duration: 0.6,
+                ease: "power3.out",
+            }, "-=0.5").fromTo(".heroBtn", {
+                opacity: 0,
+                scale: 0.9,
+                stagger: {
+                    each: 0.1,
+                    from: "start"
+                }
+            }, {
+                scale: 1,
+                opacity: 1,
+                duration: 0.2,
+                ease: "power3.out",
+            },"-=0.7")
         })
 
         return () => ctx.revert()
-    },[])
+    }, [])
     return (
         <section
             id="hero"
@@ -89,8 +101,8 @@ const Hero = () => {
                         <span className="title">Building</span>
                         <br />
                         <span className="title">
-                        <span className="text-zinc-500">digital</span>{" "}
-                        experiences</span>
+                            <span className="text-zinc-500">digital</span>{" "}
+                            experiences</span>
                         <br />
 
                         <span className="relative inline-block text-violet-500">
@@ -119,18 +131,18 @@ const Hero = () => {
                         >
                             <a
                                 href="#work"
-                                className="group flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-violet-500 hover:text-white"
+                                className="group flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-violet-500 hover:text-white heroBtn"
                             >
                                 View my work
 
                                 <span className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
-                                    <Send size={ 20} />
+                                    <Send size={20} />
                                 </span>
                             </a>
 
                             <a
                                 href="#contact"
-                                className="rounded-full border border-white/10 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+                                className="rounded-full border border-white/10 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white heroBtn"
                             >
                                 Let's talk
                             </a>
