@@ -1,0 +1,128 @@
+
+const Hero = () => {
+  return (
+    <section
+      id="hero"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#080808] px-6 pt-32 text-white sm:px-10 lg:px-16"
+    >
+      {/* Background Grid */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.035]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Violet Glow */}
+      <div className="pointer-events-none absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-violet-600/10 blur-[140px]" />
+
+      {/* Main Content */}
+      <div className="relative mx-auto w-full max-w-7xl">
+        <div className="max-w-6xl">
+
+          {/* Availability */}
+          <div
+            id="availability"
+            className="mb-8 flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 backdrop-blur-sm"
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-60" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-violet-500" />
+            </span>
+
+            <span className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-400">
+              Available for work
+            </span>
+          </div>
+
+          {/* Small Intro */}
+          <p
+            id="heroIntro"
+            className="mb-5 text-sm font-medium uppercase tracking-[0.25em] text-zinc-500"
+          >
+            Full Stack Developer · India
+          </p>
+
+          {/* Main Heading */}
+          <h1
+            id="heroTitle"
+            className="max-w-6xl text-[clamp(4rem,10vw,9.5rem)] font-semibold leading-[0.86] tracking-[-0.07em]"
+          >
+            Building
+            <br />
+
+            <span className="text-zinc-500">digital</span>{" "}
+            experiences
+            <br />
+
+            <span className="relative inline-block text-violet-500">
+              that matter.
+              <span className="absolute -right-5 top-0 h-3 w-3 rounded-full bg-violet-500 shadow-[0_0_30px_rgba(139,92,246,0.8)]" />
+            </span>
+          </h1>
+
+          {/* Bottom Content */}
+          <div className="mt-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            
+            {/* Description */}
+            <p
+              id="heroDescription"
+              className="max-w-xl text-base leading-7 text-zinc-400 sm:text-lg"
+            >
+              I design and build fast, modern web applications with a focus
+              on clean interfaces, thoughtful interactions, and scalable
+              technology.
+            </p>
+
+            {/* Buttons */}
+            <div
+              id="heroButtons"
+              className="flex flex-wrap items-center gap-3"
+            >
+              <a
+                href="#work"
+                className="group flex items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-violet-500 hover:text-white"
+              >
+                View my work
+
+                <span className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+                  ↗
+                </span>
+              </a>
+
+              <a
+                href="#contact"
+                className="rounded-full border border-white/10 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+              >
+                Let's talk
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom Meta */}
+          <div
+            id="scrollIndicator"
+            className="mt-20 flex items-center justify-between border-t border-white/[0.08] pt-5"
+          >
+            <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-600">
+              <span>Scroll to explore</span>
+
+              <span className="h-px w-10 bg-zinc-700" />
+
+              <span>↓</span>
+            </div>
+
+            <div className="hidden text-xs tracking-[0.2em] text-zinc-600 sm:block">
+              01 / 04
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
+
