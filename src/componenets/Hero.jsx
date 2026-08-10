@@ -44,7 +44,12 @@ const Hero = () => {
                 opacity: 1,
                 duration: 0.2,
                 ease: "power3.out",
-            },"-=0.7")
+            }, "-=0.2").from("#scrollIndicator", {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                ease: "power3.out"
+            },"-=0.3")
         })
 
         return () => ctx.revert()
@@ -152,7 +157,7 @@ const Hero = () => {
                     {/* Bottom Meta */}
                     <div
                         id="scrollIndicator"
-                        className="mt-20 flex items-center justify-between border-t border-white/[0.08] pt-5"
+                        className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-2"
                     >
                         <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-600">
                             <span>Scroll to explore</span>
