@@ -1,8 +1,12 @@
+import Navbar from "./componenets/Navbar"
+// import Main from "./pages/Main"
 
 function App() {
   return (
     <>
-      <h1>Hello</h1>
+
+      <Navbar />
+      {/* <Main/> */}
     </>
   )
 }

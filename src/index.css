@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+.navLink::after{
+    content: "";
+    width: 0;
+    background-color: rgb(250, 247, 247);
+    height: 1px;
+    display: block;
+    transition: all ease 0.5s;
+}
+
+.navLink:hover::after{
+    width: 100%;
+}
+
+#cta:hover{
+    box-shadow: 0 0 10px rgb(241, 234, 234);
+    animation-name: wibble;
+    animation-duration: 0.4s;
+    background-color: #6615D4;
+    animation-timing-function: ease;
+}
+
+@keyframes wibble {
+    30%{
+        transform: rotate(10deg)
+    }
+    60%{
+        transform: rotate(-20deg)
+    }
+    100%{
+        transform: rotate(10deg)
+    }
+}
