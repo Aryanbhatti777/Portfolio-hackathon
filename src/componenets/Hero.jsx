@@ -72,9 +72,8 @@ const Hero = () => {
                 scrollTrigger: {
                     trigger: "#hero",
                     start: "top top",
-                    end: "+=1500",
+                    end: "bottom top",
                     scrub: 1,
-                    // markers: true,
                 }
             })
             gsap.to("#heroButtons", {
@@ -84,8 +83,7 @@ const Hero = () => {
                 scrollTrigger: {
                     trigger: "#hero",
                     start: "top top",
-                    end: "+=1000",
-                    markers: true,
+                    end: "bottom top",
                     scrub: 1,
                 }
             })
@@ -96,8 +94,7 @@ const Hero = () => {
                 scrollTrigger: {
                     trigger: "#hero",
                     start: "top top",
-                    end: "+=1500",
-                    markers: true,
+                    end: "bottom top",
                     scrub: 1,
                 }
             })
