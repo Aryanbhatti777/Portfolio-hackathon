@@ -1,12 +1,13 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Send } from "lucide-react";
 import { useLayoutEffect } from "react";
-
+gsap.registerPlugin(ScrollTrigger)
 const Hero = () => {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            const tl = gsap.timeline({ delay: 0.8 })
+            const tl = gsap.timeline({ delay: 0.8, })
 
             tl.from("#availability", {
                 opacity: 0,
@@ -49,7 +50,57 @@ const Hero = () => {
                 y: 30,
                 duration: 0.8,
                 ease: "power3.out"
-            },"-=0.3")
+            }, "-=0.3")
+            
+            gsap.to("#heroTitle", {
+                opacity: 0,
+                y: -80,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "+=500",
+                    // markers: true,
+                    scrub: 1,
+                }
+            })
+
+            gsap.to("#discriptionScroll", {
+                opacity: 0,
+                y: -40,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "+=1500",
+                    scrub: 1,
+                    // markers: true,
+                }
+            })
+            gsap.to("#heroButtons", {
+                opacity: 0.4,
+                y: -20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "+=1000",
+                    markers: true,
+                    scrub: 1,
+                }
+            })
+            gsap.to("#sIndicatorScroll", {
+                opacity: 0,
+                y: 20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#hero",
+                    start: "top top",
+                    end: "+=1500",
+                    markers: true,
+                    scrub: 1,
+                }
+            })
         })
 
         return () => ctx.revert()
@@ -78,7 +129,7 @@ const Hero = () => {
                     {/* Availability */}
                     <div
                         id="availability"
-                        className="mb-8 flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 backdrop-blur-sm"
+                        className="mb-4 flex w-fit items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 backdrop-blur-sm"
                     >
                         <span className="relative flex h-2.5 w-2.5">
                             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-60" />
@@ -117,17 +168,19 @@ const Hero = () => {
                     </h1>
 
                     {/* Bottom Content */}
-                    <div className="mt-12 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+                    <div className="mt-10 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
 
                         {/* Description */}
-                        <p
-                            id="heroDescription"
-                            className="max-w-xl text-base leading-7 text-zinc-400 sm:text-lg"
-                        >
-                            I design and build fast, modern web applications with a focus
-                            on clean interfaces, thoughtful interactions, and scalable
-                            technology.
-                        </p>
+                        <div id="discriptionScroll">
+                            <p
+                                id="heroDescription"
+                                className="max-w-xl text-base leading-7 text-zinc-400 sm:text-lg"
+                            >
+                                I design and build fast, modern web applications with a focus
+                                on clean interfaces, thoughtful interactions, and scalable
+                                technology.
+                            </p>
+                        </div>
 
                         {/* Buttons */}
                         <div
@@ -159,7 +212,7 @@ const Hero = () => {
                         id="scrollIndicator"
                         className="mt-5 flex items-center justify-between border-t border-white/[0.08] pt-2"
                     >
-                        <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-600">
+                        <div className="flex items-center gap-3 text-xs uppercase tracking-[0.2em] text-zinc-600" id="sIndicatorScroll">
                             <span>Scroll to explore</span>
 
                             <span className="h-px w-10 bg-zinc-700" />

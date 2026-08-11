@@ -3,7 +3,7 @@
 .navLink::after{
     content: "";
     width: 0;
-    background-color: rgb(250, 247, 247);
+    background-color: rgb(174, 66, 232);
     height: 1px;
     display: block;
     transition: all ease 0.5s;
@@ -17,7 +17,7 @@
     box-shadow: 0 0 5px rgb(241, 234, 234);
     animation-name: wibble;
     animation-duration: 0.4s;
-    background-color: #6615D4;
+    background-color: #a475e6;
     animation-timing-function: ease;
 }
 
