@@ -115,6 +115,19 @@ const Work = () => {
                 })
             });
 
+            gsap.utils.toArray(".projectImage").forEach((img) => {
+
+                gsap.to(img, {
+                    y: -40,
+                    scrollTrigger: {
+                        trigger: img,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1
+                    }
+                })
+            });
+
             gsap.utils.toArray(".techWrap").forEach((tech) => {
 
                 const tags = tech.querySelectorAll(".tech")
