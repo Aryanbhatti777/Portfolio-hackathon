@@ -4,7 +4,140 @@ import { useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger)
 const Work = () => {
 
-    
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            const tl1 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#workHeader",
+                    start: "top 80%",
+                }
+            });
+
+            tl1.from("#workEyebrow", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                ease: "power3.out",
+            }).from("#workTitle", {
+                opacity: 0,
+                y: 60,
+                duration: 1,
+                ease: "power3.out",
+            }, "-=0.5").from("#workDescription", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                ease: "power3.out",
+            }, "-=0.7")
+
+            gsap.utils.toArray(".projectImage").forEach((image) => {
+
+                gsap.from(image, {
+                    clipPath: "inset(0% 0% 100% 0%)",
+                    duration: 2,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: image,
+                        start: "top 80%",
+                    }
+                });
+            });
+
+            gsap.utils.toArray(".projectTitle").forEach((title) => {
+
+                gsap.from(title, {
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power3.out",
+                    y: 50,
+                    scrollTrigger: {
+                        trigger: title,
+                        start: "top 85%"
+                    }
+                })
+            });
+
+            gsap.utils.toArray(".projectCategory").forEach((cat) => {
+
+                gsap.from(cat, {
+                    y: 15,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: cat,
+                        start: "top 85%"
+                    }
+                })
+            });
+
+            gsap.utils.toArray(".projectDescription").forEach((desc) => {
+
+                gsap.from(desc, {
+                    y: 25,
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: desc,
+                        start: "top 85%"
+                    }
+                })
+            });
+
+            gsap.utils.toArray(".projectArrow").forEach((arrow) => {
+
+                gsap.from(arrow, {
+                    x: 10,
+                    y: 10,
+                    rotation: -20,
+                    scale: 0.7,
+                    opacity: 0,
+                    duration: 0.7,
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: arrow,
+                        start: "top 85%"
+                    }
+                })
+            });
+            gsap.utils.toArray(".projectNumber").forEach((num) => {
+
+                gsap.from(num, {
+                    y: 15,
+                    opacity: 0,
+                    duration: 0.5,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: num,
+                        start: "top 85%"
+                    }
+                })
+            });
+
+            gsap.utils.toArray(".techWrap").forEach((tech) => {
+
+                const tags = tech.querySelectorAll(".tech")
+                gsap.from(tags, {
+                    y: 25,
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: tech,
+                        start: "top 85%"
+                    },
+                    stagger: {
+                        each: 0.2
+                    }
+                })
+
+            });
+        })
+
+        return () => ctx.revert()
+
+    }, [])
     const projects = [
         {
             number: "01",
@@ -115,7 +248,7 @@ const Work = () => {
                                 {/* Title */}
 
                                 <div>
-                                    <p className="mb-3 text-xs uppercase tracking-[0.2em] text-zinc-600">
+                                    <p className="projectCategory mb-3 text-xs uppercase tracking-[0.2em] text-zinc-600">
                                         {project.category}
                                     </p>
 
@@ -137,10 +270,10 @@ const Work = () => {
 
                             <div
                                 className={`projectImageWrap relative overflow-hidden rounded-2xl border border-white/[0.08] bg-zinc-950 ${project.featured
-                                        ? "aspect-[16/9]"
-                                        : "aspect-[16/8]"
+                                    ? "aspect-[16/9]"
+                                    : "aspect-[16/8]"
                                     }`}
-                                
+
                             >
                                 {/* Image */}
 
@@ -175,11 +308,11 @@ const Work = () => {
 
                                 {/* Tech */}
 
-                                <div className="flex flex-wrap gap-2 lg:justify-center">
+                                <div className="techWrap flex flex-wrap gap-2 lg:justify-center">
                                     {project.tech.map((item) => (
                                         <span
                                             key={item}
-                                            className="h-fit rounded-full border border-white/[0.08] bg-white/[0.02] px-3 py-1.5 text-xs text-zinc-500"
+                                            className="tech h-fit rounded-full border border-white/[0.08] bg-white/[0.02] px-3 py-1.5 text-xs text-zinc-500"
                                         >
                                             {item}
                                         </span>
