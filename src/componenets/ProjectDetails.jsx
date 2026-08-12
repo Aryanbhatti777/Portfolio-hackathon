@@ -737,7 +737,7 @@ const ProjectDetails = () => {
                     </p>
 
                     <a
-                        href="tel:8199866932"
+                        href="mailto:bhattiaryan777@gmail.com"
                         className="group mt-10 inline-flex items-center gap-4 rounded-full bg-white px-7 py-4 text-sm font-semibold text-black transition-all duration-300 hover:bg-violet-500 hover:text-white"
                     >
                         Start a conversation
