@@ -89,33 +89,8 @@ const Navbar = () => {
                 passive: true,
             });
 
-            const sections = ["work", "about", "skills", "contact"];
-            const observers = [];
-
-            sections.forEach((id) => {
-                const section = document.getElementById(id);
-
-                if (!section) return;
-
-                const observer = new IntersectionObserver(
-                    ([entry]) => {
-                        if (entry.isIntersecting) {
-                            setActiveSection(id);
-                        }
-                    },
-                    {
-                        threshold: 0,
-                        rootMargin: "-30% 0px -60% 0px",
-                    }
-                );
-
-                observer.observe(section);
-                observers.push(observer);
-            });
-
             return () => {
                 window.removeEventListener("scroll", handleScroll);
-                observers.forEach((observer) => observer.disconnect());
             };
         });
 
