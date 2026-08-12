@@ -17,6 +17,41 @@ const projects = [
 
         overview:
             "FocusFlow brings everyday productivity tools into a single focused workspace. The goal was to create an interface that feels simple enough for everyday use while still providing enough functionality for serious productivity.",
+        
+        role: [
+            {
+                title: "Frontend Development",
+                items: [
+                    "React architecture",
+                    "Reusable components",
+                    "Responsive interfaces",
+                ],
+            },
+            {
+                title: "UI / UX",
+                items: [
+                    "Interface design",
+                    "User experience",
+                    "Micro-interactions",
+                ],
+            },
+            {
+                title: "Backend Development",
+                items: [
+                    "REST APIs",
+                    "Authentication",
+                    "Database integration",
+                ],
+            },
+            {
+                title: "Deployment",
+                items: [
+                    "Production deployment",
+                    "Environment configuration",
+                    "Performance optimization",
+                ],
+            },
+        ],
 
         features: [
             "Task management",
@@ -53,6 +88,41 @@ const projects = [
             "MongoDB",
             "JWT",
             "Cloudinary",
+        ],
+
+        role: [
+            {
+                title: "Frontend Development",
+                items: [
+                    "React architecture",
+                    "Reusable components",
+                    "Responsive interfaces",
+                ],
+            },
+            {
+                title: "UI / UX",
+                items: [
+                    "Interface design",
+                    "User experience",
+                    "Micro-interactions",
+                ],
+            },
+            {
+                title: "Backend Development",
+                items: [
+                    "REST APIs",
+                    "Authentication",
+                    "Database integration",
+                ],
+            },
+            {
+                title: "Deployment",
+                items: [
+                    "Production deployment",
+                    "Environment configuration",
+                    "Performance optimization",
+                ],
+            },
         ],
 
         overview:
@@ -92,6 +162,41 @@ const projects = [
             "Vanilla JS",
             "Chart.js",
             "LocalStorage",
+        ],
+
+        role: [
+            {
+                title: "Frontend Development",
+                items: [
+                    "React architecture",
+                    "Reusable components",
+                    "Responsive interfaces",
+                ],
+            },
+            {
+                title: "UI / UX",
+                items: [
+                    "Interface design",
+                    "User experience",
+                    "Micro-interactions",
+                ],
+            },
+            {
+                title: "Backend Development",
+                items: [
+                    "REST APIs",
+                    "Authentication",
+                    "Database integration",
+                ],
+            },
+            {
+                title: "Deployment",
+                items: [
+                    "Production deployment",
+                    "Environment configuration",
+                    "Performance optimization",
+                ],
+            },
         ],
 
         overview:

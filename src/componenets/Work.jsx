@@ -345,7 +345,7 @@ const Work = () => {
           </p>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/Aryanbhatti777"
             target="_blank"
             rel="noreferrer"
             className="group flex w-fit items-center gap-3 text-sm text-zinc-500 transition-colors duration-300 hover:text-white"
