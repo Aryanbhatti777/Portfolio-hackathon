@@ -11,7 +11,7 @@ const Navbar = () => {
             const tl = gsap.timeline();
 
             tl.from("#nav", {
-                y: -80,
+                y: -100,
                 opacity: 0,
                 duration: 0.8,
                 ease: "power3.out",

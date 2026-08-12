@@ -1,15 +1,17 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
+
+    const footerRef = useRef(null)
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: "#footer",
+                    trigger: footerRef.current,
                     start: "top 85%",
                     once: true,
                 },
@@ -56,6 +58,7 @@ const Footer = () => {
 
     return (
         <footer
+            ref={footerRef}
             id="footer"
             className="relative overflow-hidden bg-[#080808] px-6 pb-8 pt-24 text-white sm:px-10 lg:px-16 lg:pt-32"
         >
