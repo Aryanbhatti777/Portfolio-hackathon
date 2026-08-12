@@ -62,12 +62,12 @@ const Footer = () => {
             id="footer"
             className="relative overflow-hidden bg-[#080808] px-6 pb-8 pt-24 text-white sm:px-10 lg:px-16 lg:pt-32"
         >
-            {/* Glow */}
+          
             <div className="pointer-events-none absolute -right-72 top-1/4 h-[500px] w-[500px] rounded-full bg-violet-600/[0.06] blur-[160px]" />
 
             <div className="relative mx-auto max-w-7xl">
 
-                {/* Main CTA */}
+      
                 <div className="border-b border-white/[0.08] pb-20 lg:pb-28">
 
                     <p
@@ -105,10 +105,10 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Footer navigation */}
+             
                 <div className="grid gap-12 border-b border-white/[0.08] py-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr] lg:py-16">
 
-                    {/* Brand */}
+              
                     <div className="footerItem">
 
                         <button
@@ -125,7 +125,7 @@ const Footer = () => {
 
                     </div>
 
-                    {/* Navigation */}
+               
                     <div className="footerItem">
                         <p className="mb-5 text-xs uppercase tracking-[0.25em] text-zinc-700">
                             Navigation
@@ -162,7 +162,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Social */}
+               
                     <div className="footerItem">
                         <p className="mb-5 text-xs uppercase tracking-[0.25em] text-zinc-700">
                             Connect
@@ -196,7 +196,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    {/* Availability */}
+          
                     <div className="footerItem">
                         <p className="mb-5 text-xs uppercase tracking-[0.25em] text-zinc-700">
                             Availability
@@ -220,7 +220,6 @@ const Footer = () => {
 
                 </div>
 
-                {/* Bottom bar */}
                 <div className="flex flex-col gap-5 pt-8 sm:flex-row sm:items-center sm:justify-between">
 
                     <p className="text-xs uppercase tracking-[0.2em] text-zinc-700">

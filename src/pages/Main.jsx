@@ -4,6 +4,7 @@ import Work from '../componenets/Work';
 import Contact from '../componenets/Contact';
 import About from '../componenets/About';
 import Skills from '../componenets/Skills';
+import Footer from '../componenets/Footer';
 
 const Main = () => {
   return (
@@ -12,7 +13,8 @@ const Main = () => {
       <Work />
       <About />
       <Skills/>
-      <Contact/>
+      <Contact />
+      <Footer/>
       </>
   )
 }
