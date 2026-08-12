@@ -1,12 +1,21 @@
-import Navbar from "./componenets/Navbar"
+import { Route, Routes } from "react-router"
+
 import Main from "./pages/Main"
+import ProjectDetails from "./componenets/ProjectDetails"
 
 function App() {
   return (
     <>
-
-      <Navbar />
-      <Main/>
+      
+      <Routes>
+        
+        <Route path="/" element={<Main/>}/>
+  
+        <Route
+          path="/projects/:slug"
+          element={<ProjectDetails />}
+        />
+</Routes>
     </>
   )
 }
