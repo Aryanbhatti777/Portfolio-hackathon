@@ -3,6 +3,7 @@ import Hero from '../componenets/Hero';
 import Work from '../componenets/Work';
 import Navbar from '../componenets/Navbar';
 import Contact from '../componenets/Contact';
+import About from '../componenets/About';
 
 const Main = () => {
   return (
@@ -10,6 +11,7 @@ const Main = () => {
       <Navbar/>
       <Hero />
       <Work />
+      <About/>
       <Contact/>
       </>
   )
