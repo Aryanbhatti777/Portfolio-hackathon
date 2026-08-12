@@ -1,20 +1,13 @@
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Send } from "lucide-react";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 const Navbar = () => {
-    const [activeSection, setActiveSection] = useState("work");
-
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-
-            // ==============================
-            // NAVBAR ENTRANCE
-            // ==============================
-
             const tl = gsap.timeline();
 
             tl.from("#nav", {
@@ -49,8 +42,8 @@ const Navbar = () => {
                     {
                         opacity: 0,
                         scale: 0.9,
-                        
-                    }, {
+                    },
+                    {
                         opacity: 1,
                         scale: 1,
                         duration: 0.3,
@@ -59,17 +52,11 @@ const Navbar = () => {
                     "-=0.3"
                 );
 
-
-            // ==============================
-            // NAVBAR SCROLL EFFECT
-            // ==============================
-
             let lastScroll = window.scrollY;
 
             const handleScroll = () => {
                 const currentScroll = window.scrollY;
 
-                // At top
                 if (currentScroll <= 20) {
                     gsap.to("#nav", {
                         y: 0,
@@ -81,17 +68,13 @@ const Navbar = () => {
                     return;
                 }
 
-                // Scrolling down
                 if (currentScroll > lastScroll) {
                     gsap.to("#nav", {
                         y: -120,
                         duration: 0.2,
                         ease: "power3.out",
                     });
-                }
-
-                // Scrolling up
-                else {
+                } else {
                     gsap.to("#nav", {
                         y: 0,
                         duration: 0.2,
@@ -106,20 +89,7 @@ const Navbar = () => {
                 passive: true,
             });
 
-            
-
-
-            // ==============================
-            // ACTIVE SECTION
-            // ==============================
-
-            const sections = [
-                "work",
-                "about",
-                "skills",
-                "contact",
-            ];
-
+            const sections = ["work", "about", "skills", "contact"];
             const observers = [];
 
             sections.forEach((id) => {
@@ -140,36 +110,17 @@ const Navbar = () => {
                 );
 
                 observer.observe(section);
-
                 observers.push(observer);
             });
 
-
-            // ==============================
-            // CLEANUP
-            // ==============================
-
             return () => {
-                window.removeEventListener(
-                    "scroll",
-                    handleScroll
-                );
-
-                observers.forEach((observer) => {
-                    observer.disconnect();
-                });
+                window.removeEventListener("scroll", handleScroll);
+                observers.forEach((observer) => observer.disconnect());
             };
-
         });
 
         return () => ctx.revert();
-
     }, []);
-
-
-    // ==============================
-    // SMOOTH SCROLL
-    // ==============================
 
     const handleNavClick = (e, target) => {
         e.preventDefault();
@@ -184,172 +135,53 @@ const Navbar = () => {
         });
     };
 
-
     return (
         <nav
             id="nav"
-            className="
-                fixed
-                left-1/2
-                top-6
-                z-50
-
-                h-16
-                w-[calc(100%-2rem)]
-                max-w-6xl
-
-                flex
-                items-center
-                justify-between
-
-                rounded-full
-                border
-                border-white/10
-                bg-black/70
-
-                px-5
-
-                backdrop-blur-xl
-
-                transition-all
-                duration-500
-            "
-            style={{
-                transform: "translateX(-50%)",
-            }}
+            className="fixed left-1/2 top-6 z-50 flex h-16 w-[calc(100%-2rem)] max-w-6xl items-center justify-between rounded-full border border-white/10 bg-black/70 px-5 backdrop-blur-xl transition-all duration-500"
+            style={{ transform: "translateX(-50%)" }}
         >
-
-            {/* ==============================
-                LOGO
-            ============================== */}
-
             <a
                 id="logo"
                 href="#hero"
                 onClick={(e) => handleNavClick(e, "#hero")}
-                className="
-                    text-xl
-                    font-bold
-                    tracking-tight
-                    text-white
-                "
+                className="text-xl font-bold tracking-tight text-white"
             >
                 AB<span className="text-violet-500">.</span>
             </a>
 
-
-            {/* ==============================
-                NAVIGATION
-            ============================== */}
-
             <div className="hidden items-center gap-8 md:flex">
-
                 {[
                     ["work", "Work"],
                     ["about", "About"],
                     ["skills", "Skills"],
                     ["contact", "Contact"],
                 ].map(([id, label]) => (
-
                     <a
                         key={id}
                         href={`#${id}`}
-                        onClick={(e) =>
-                            handleNavClick(e, `#${id}`)
-                        }
-                        className={`
-                            navLink
-                            relative
-                            inline-flex
-                            items-center
-                            py-1
-                            text-sm
-                            transition-colors
-                            duration-300
-
-                            ${
-                                activeSection === id
-                                    ? "text-white"
-                                    : "text-zinc-500 hover:text-white"
-                            }
-                        `}
+                        onClick={(e) => handleNavClick(e, `#${id}`)}
+                        className="navLink relative inline-flex items-center py-1 text-sm text-white transition-colors duration-300"
                     >
-
                         {label}
 
-                        {/* Active underline */}
-
-                        <span
-                            className={`
-                                absolute
-                                left-0
-                                -bottom-1
-                                h-px
-                                bg-violet-500
-                                transition-all
-                                duration-300
-
-                                ${
-                                    activeSection === id
-                                        ? "w-full opacity-100"
-                                        : "w-0 opacity-0"
-                                }
-                            `}
-                        />
-
+                        <span className="absolute -bottom-1 left-0 h-px bg-violet-500 transition-all duration-300" />
                     </a>
-
                 ))}
-
             </div>
-
-
-            {/* ==============================
-                CTA
-            ============================== */}
 
             <a
                 id="cta"
                 href="#contact"
-                onClick={(e) =>
-                    handleNavClick(e, "#contact")
-                }
-                className="
-                    group
-                    flex
-                    items-center
-                    gap-2
-
-                    rounded-full
-                    bg-violet-500
-
-                    px-4
-                    py-2.5
-
-                    text-sm
-                    font-medium
-                    text-white
-
-                    transition-all
-                    duration-300
-
-                    hover:bg-violet-600
-                    hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]
-                "
+                onClick={(e) => handleNavClick(e, "#contact")}
+                className="group flex items-center gap-2 rounded-full bg-violet-500 px-4 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-violet-600 hover:shadow-[0_0_30px_rgba(139,92,246,0.25)]"
             >
                 Let's Talk
 
-                <span
-                    className="
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-1
-                    "
-                >
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
                     <Send size={18} />
                 </span>
             </a>
-
         </nav>
     );
 };
