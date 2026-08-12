@@ -36,3 +36,9 @@
 #heroTitle span{
     display: inline-block
 }
+
+.nav-scrolled {
+    background: rgba(8, 8, 8, 0.88);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
